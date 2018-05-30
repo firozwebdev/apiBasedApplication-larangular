@@ -22,6 +22,20 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Film::class, function (Faker $faker) {
+    $i = 1; $i++;
+    return [
+        'name' => $faker->name,
+        'slug' => str_slug($faker->name,'-'),
+        'description' => $faker->text,
+        'release-date' => $faker->dateTimeThisDecade($max = '+10 years'),
+        'rating' => rand(1,5),
+        'ticket-price' =>  $faker->randomFloat(2,1,100),
+        'country' =>  $faker->country,
+        'photo'=> 'image-'.$faker->unique()->randomNumber($nbDigits = 1)
+    ];
+});
+
 $factory->define(App\Genre::class, function (Faker $faker) {
     static $genreName = ['Historical','Romantic','Horror','Tragedy'];
     return [

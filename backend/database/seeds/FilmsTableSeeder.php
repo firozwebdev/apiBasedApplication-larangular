@@ -13,33 +13,6 @@ class FilmsTableSeeder extends Seeder
      */
     public function run()
     {
-        Film::create([
-            'name' => 'Titanic',
-            'description' => 'This is a tragedy movie.',
-            'release-date' => Carbon::create(1997, 18, 11, 0),
-            'rating' => 4.8,
-            'ticket-price' => 10,
-            'country' => 'America',
-            'photo'=>'titanic.jpg'
-        ]);
-        Film::create([
-            'name' => 'The Mummy',
-            'description' => 'This is a horror movie.',
-            'release-date' => Carbon::create(2000, 04, 02, 0),
-            'rating' => 4,
-            'ticket-price' => 10,
-            'country' => 'America',
-            
-            'photo'=>'mummy.jpg'
-        ]);
-        Film::create([
-            'name' => 'Troy',
-            'description' => 'This is a historical movie.',
-            'release-date' => Carbon::create(1996, 18, 11, 0),
-            'rating' => 4.8,
-            'ticket-price' => 3,
-            'country' => 'America',
-            'photo'=>'troy.jpg'
-        ]);
+        factory(App\Film::class, 3)->create();
     }
 }
