@@ -21,3 +21,11 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Genre::class, function (Faker $faker) {
+    static $genreName = ['Historical','Romantic','Horror','Tragedy'];
+    return [
+        'film_id' => App\Film::all()->random()->id,
+        'genre-name' => $genreName[rand(0,3)]
+    ];
+});
