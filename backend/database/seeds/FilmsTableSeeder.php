@@ -20,7 +20,6 @@ class FilmsTableSeeder extends Seeder
             'rating' => 4.8,
             'ticket-price' => 10,
             'country' => 'America',
-            'genre' => 'Tragedy',
             'photo'=>'titanic.jpg'
         ]);
         Film::create([
@@ -30,7 +29,7 @@ class FilmsTableSeeder extends Seeder
             'rating' => 4,
             'ticket-price' => 10,
             'country' => 'America',
-            'genre' => 'Horror',
+            
             'photo'=>'mummy.jpg'
         ]);
         Film::create([
@@ -40,7 +39,6 @@ class FilmsTableSeeder extends Seeder
             'rating' => 4.8,
             'ticket-price' => 3,
             'country' => 'America',
-            'genre' => 'History',
             'photo'=>'troy.jpg'
         ]);
     }
