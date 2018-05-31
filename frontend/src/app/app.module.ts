@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthService } from './auth.service';
+import { TokenService } from './token.service';
 
 
 
@@ -38,7 +40,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [AuthService, TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
