@@ -24,7 +24,10 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+    
+
+    Route::post('/film','FilmsController@saveFilm');
 
 });
-
 Route::get('/films','FilmsController@getFilms');
+

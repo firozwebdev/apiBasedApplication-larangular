@@ -19,9 +19,9 @@ class CreateFilmsTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->string('release-date');
-            $table->float('rating');
-            $table->float('ticket-price');
-            $table->string('country');
+            $table->float('rating')->nullable();
+            $table->float('ticket-price')->nullable();
+            $table->string('country')->nullable();
             $table->string('photo');
 
             $table->timestamps();
