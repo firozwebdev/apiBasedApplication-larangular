@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-film',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmComponent implements OnInit {
 
-  constructor() { }
+  films: any;
+  constructor(private  http: HttpClient) { }
 
   ngOnInit() {
+     this.http.get('http://localhost:8000/api/films').subscribe(
+      data => this.films = data,
+      error => console.log(error),
+    );
   }
 
 }

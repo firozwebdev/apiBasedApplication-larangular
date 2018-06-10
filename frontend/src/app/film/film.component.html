@@ -1,3 +1,14 @@
-<p>
-  film works!
-</p>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+    </tr>
+     <tr  *ngFor="let film of films">
+       <td>{{ film.name }}</td>
+       <td>{{ film.description }}</td>
+       <td><img src="{{ film.photo }}"/></td>
+     </tr>
+  </table>
+</div>

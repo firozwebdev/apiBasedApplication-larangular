@@ -40,7 +40,7 @@ $factory->define(App\Film::class, function (Faker $faker) {
         'rating' => rand(1,5),
         'ticket-price' =>  $faker->randomFloat(2,1,100),
         'country' =>  $faker->country,
-        'photo'=> 'image-'.$faker->unique()->randomNumber($nbDigits = 1)
+        'photo'=> 'http://localhost:8000/upload/film-images/'.$faker->unique()->randomNumber($nbDigits = 1).'.jpg'
     ];
 });
 
