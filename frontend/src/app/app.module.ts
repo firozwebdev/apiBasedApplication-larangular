@@ -14,6 +14,7 @@ import { AuthService } from './auth.service';
 import { TokenService } from './token.service';
 import { CreteFilmComponent } from './crete-film/crete-film.component';
 import { ContactComponent } from './contact/contact.component';
+import { EditComponentComponent } from './edit-component/edit-component.component';
 
 
 
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     FilmComponent,
     CreteFilmComponent,
-    ContactComponent
+    ContactComponent,
+    EditComponentComponent
   ],
   imports: [
     BrowserModule,

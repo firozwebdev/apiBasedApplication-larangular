@@ -1,5 +1,8 @@
 
 <div class="col-md-6 ">
+    <div class="alert alert-danger" *ngIf="message">
+        {{ message }}
+    </div>
     <form class="form"  #createForm=ngForm (ngSubmit)="onSubmit(createForm)">
 
         <div class="form-group">

@@ -1,18 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-
-
-
-const now = new Date();
 @Component({
-  selector: 'app-crete-film',
-  templateUrl: './crete-film.component.html',
-  styleUrls: ['./crete-film.component.css']
+  selector: 'app-edit-component',
+  templateUrl: './edit-component.component.html',
+  styleUrls: ['./edit-component.component.css']
 })
-export class CreteFilmComponent implements OnInit {
+export class EditComponentComponent implements OnInit {
+
   public selectedFile: File = null;
-  public message = '';
   public form = {
     name: null,
     description: null,
@@ -29,26 +25,22 @@ export class CreteFilmComponent implements OnInit {
 
   onFileSelected(event){
    this.selectedFile = <File> event.target.files[0];
-   //console.log(this.selectedFile);
+   
   }
 
-  onSubmit(createForm){
-    //console.log(createForm.value.releaseDate.year);
+  onSubmit(updateForm){
+
     const releaseDate = createForm.value.releaseDate.year + "-"+ createForm.value.releaseDate.month + "-" + createForm.value.releaseDate.day;
     console.log(releaseDate);
     const fd = new FormData();
-    fd.append('name', createForm.value.name);
-    fd.append('description', createForm.value.description);
+    fd.append('name', updateForm.value.name);
+    fd.append('description', updateForm.value.description);
     fd.append('releaseDate', releaseDate);
     
     fd.append('photo', this.selectedFile, this.selectedFile.name);
    
-    return this.http.post('http://localhost:8000/api/films', fd).subscribe(
-      data => {
-        this.message = data.message;
-        console.log(data);
-      },
-
+    return this.http.put('http://localhost:8000/api/films', fd).subscribe(
+      data => console.log(data),
       error => console.log(error),
     );
   }
@@ -58,7 +50,5 @@ export class CreteFilmComponent implements OnInit {
     // const testDate = new Date(date);
     // console.log(testDate); // Thu Jan 26 2017 ...
   }
-
-
 
 }
