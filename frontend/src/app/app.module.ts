@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './auth.service';
 import { TokenService } from './token.service';
 import { CreteFilmComponent } from './crete-film/crete-film.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
     path: 'create-film',
     component: CreteFilmComponent
   },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
   
 ];
 
@@ -41,7 +46,8 @@ const appRoutes: Routes = [
     LoginComponent,
     NavbarComponent,
     FilmComponent,
-    CreteFilmComponent
+    CreteFilmComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

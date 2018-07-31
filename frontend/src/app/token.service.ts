@@ -24,15 +24,14 @@ export class TokenService {
     return false;
   }
 
-  payload(token){
+  payload(token) {
     const payload = token.split('.')[1];
     return this.decode(payload); 
   }
-  decode(payload){
+  decode(payload) {
     return JSON.parse(atob(payload));
   }
   loggedIn(){
-    
     return this.isValid();
   }
 }

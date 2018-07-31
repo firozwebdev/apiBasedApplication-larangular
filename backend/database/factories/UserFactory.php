@@ -36,7 +36,7 @@ $factory->define(App\Film::class, function (Faker $faker) {
         'name' => $faker->name,
         'slug' => str_slug($faker->name,'-'),
         'description' => $faker->text,
-        'release-date' => $faker->dateTimeThisDecade($max = '+10 years'),
+        'releaseDate' => $faker->dateTimeThisDecade($max = '+10 years'),
         'rating' => rand(1,5),
         'ticket-price' =>  $faker->randomFloat(2,1,100),
         'country' =>  $faker->country,
