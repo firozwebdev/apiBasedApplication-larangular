@@ -51,7 +51,7 @@ class FilmsController extends Controller
         $film->description = $request->get('description');
         $film->releaseDate = $request->get('releaseDate');
         $film->photo = $img_directory;
-
+        $film->save();
         return response()->json([
             'message' => 'Film Saved Successfully',
             'film' => $film

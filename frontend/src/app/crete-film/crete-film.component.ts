@@ -42,7 +42,7 @@ export class CreteFilmComponent implements OnInit {
     
     fd.append('photo', this.selectedFile, this.selectedFile.name);
    
-    return this.http.post('http://localhost:8000/api/film', fd).subscribe(
+    return this.http.post('http://localhost:8000/api/films', fd).subscribe(
       data => console.log(data),
       error => console.log(error),
     );
